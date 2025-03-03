@@ -17,13 +17,5 @@ FetchContent_MakeAvailable(mylibrary)
 # プロジェクトのターゲットを定義
 add_executable(myapp src/main.cpp)
 
-# mylibrary をリンク
+# これだけで `mylibrary` をリンクできる
 target_link_libraries(myapp PRIVATE mylibrary)
-
-# mylibrary のヘッダーファイルの場所を追加
-target_include_directories(myapp PRIVATE 
-    ${mylibrary_SOURCE_DIR}/conan-publish-tutorial
-)
-
-# mylibrary.lib の場所をリンクパスに追加
-target_link_directories(myapp PRIVATE ${mylibrary_BINARY_DIR}/Debug)
